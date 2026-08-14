@@ -1,14 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowDownRight,
   ArrowUpRight,
   Check,
-  CodeXml,
   Command,
-  PanelsTopLeft,
-  Smartphone,
-  Terminal,
 } from "lucide-react";
+
+const githubUrl = "https://github.com/edwardma33/agent-orange";
+const githubLogo = "https://cdn.simpleicons.org/github/e8e8e8";
+
+function GitHubLogo({ className }: { className: string }) {
+  return <Image src={githubLogo} alt="" aria-hidden="true" width={16} height={16} unoptimized className={className} />;
+}
 
 const ports = [
   {
@@ -18,7 +22,8 @@ const ports = [
     path: "agent_orange.yml",
     format: "YAML theme",
     href: "/api/themes/warp",
-    Icon: Terminal,
+    sourceHref: `${githubUrl}/blob/main/themes/warp/agent_orange.yml`,
+    logo: "https://cdn.simpleicons.org/warp/e8e8e8",
   },
   {
     name: "Neovim",
@@ -27,7 +32,8 @@ const ports = [
     path: "agent_orange.lua",
     format: "Lua colorscheme",
     href: "/api/themes/nvim",
-    Icon: CodeXml,
+    sourceHref: `${githubUrl}/blob/main/themes/nvim/agent_orange.lua`,
+    logo: "https://cdn.simpleicons.org/neovim/e8e8e8",
   },
   {
     name: "Shadcn/UI",
@@ -36,7 +42,8 @@ const ports = [
     path: "agent_orange.css",
     format: "CSS variables",
     href: "/api/themes/shadcn",
-    Icon: PanelsTopLeft,
+    sourceHref: `${githubUrl}/blob/main/themes/shadcn/agent_orange.css`,
+    logo: "https://cdn.simpleicons.org/shadcnui/e8e8e8",
   },
   {
     name: "Expo",
@@ -45,7 +52,8 @@ const ports = [
     path: "agent-orange.js",
     format: "React Native StyleSheet",
     href: "/api/themes/expo",
-    Icon: Smartphone,
+    sourceHref: `${githubUrl}/blob/main/themes/expo/agent-orange.js`,
+    logo: "https://cdn.simpleicons.org/expo/e8e8e8",
   },
 ];
 
@@ -62,6 +70,16 @@ export default function Home() {
         <div className="flex items-center gap-5 text-xs font-medium text-[#a3a3a3]">
           <a href="#ports" className="hidden transition-colors hover:text-[#e8e8e8] sm:block">
             Ports
+          </a>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-md border border-[#333333] px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.1em] text-[#e8e8e8] transition-colors hover:border-[#ff6b00] hover:text-[#ff6b00]"
+          >
+            <GitHubLogo className="size-3.5" />
+            GitHub
+            <ArrowUpRight className="size-3" aria-hidden="true" />
           </a>
           <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#e8e8e8]">
             04 ports
@@ -88,6 +106,15 @@ export default function Home() {
             >
               Explore ports
               <ArrowDownRight className="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 items-center gap-2 rounded-md border border-[#333333] px-4 text-sm font-semibold text-[#e8e8e8] transition-colors hover:border-[#ff6b00] hover:text-[#ff6b00]"
+            >
+              <GitHubLogo className="size-4" />
+              View source
             </a>
             <span className="inline-flex h-11 items-center rounded-md border border-[#333333] px-3.5 font-mono text-xs text-[#a3a3a3]">
               monochrome / semantic
@@ -157,11 +184,11 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {ports.map(({ name, kind, description, path, format, href, Icon }) => (
+            {ports.map(({ name, kind, description, path, format, href, sourceHref, logo }) => (
               <article key={name} className="group rounded-lg border border-[#333333] bg-[#111111] p-5 transition-colors hover:border-[#5a5a5a] sm:p-6">
                 <div className="flex items-start justify-between">
                   <div className="grid size-11 place-items-center rounded-md border border-[#3a3a3a] bg-[#1a1a1a] text-[#e8e8e8] group-hover:border-[#ff6b00] group-hover:text-[#ff6b00]">
-                    <Icon className="size-5" strokeWidth={1.7} aria-hidden="true" />
+                    <Image src={logo} alt="" aria-hidden="true" width={20} height={20} unoptimized className="size-5 transition-opacity group-hover:opacity-85" />
                   </div>
                   <span className="rounded-full border border-[#333333] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-[#a3a3a3]">{kind}</span>
                 </div>
@@ -172,9 +199,14 @@ export default function Home() {
                     <p className="font-mono text-xs text-[#e8e8e8]">{path}</p>
                     <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-[#737373]">{format}</p>
                   </div>
-                  <a href={href} className="inline-flex size-9 items-center justify-center rounded-md border border-[#3a3a3a] text-[#e8e8e8] transition-colors hover:border-[#ff6b00] hover:bg-[#ff6b00] hover:text-[#111111]" aria-label={`Download ${name} theme`}>
-                    <ArrowUpRight className="size-4" aria-hidden="true" />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    <a href={sourceHref} target="_blank" rel="noreferrer" className="inline-flex size-9 items-center justify-center rounded-md border border-[#3a3a3a] text-[#a3a3a3] transition-colors hover:border-[#ff6b00] hover:text-[#ff6b00]" aria-label={`View ${name} source on GitHub`}>
+                      <GitHubLogo className="size-4" />
+                    </a>
+                    <a href={href} className="inline-flex size-9 items-center justify-center rounded-md border border-[#3a3a3a] text-[#e8e8e8] transition-colors hover:border-[#ff6b00] hover:bg-[#ff6b00] hover:text-[#111111]" aria-label={`Download ${name} theme`}>
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
@@ -184,7 +216,13 @@ export default function Home() {
 
       <footer className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
         <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#737373]">Agent Orange / developer themes</p>
-        <a href="#ports" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#a3a3a3] transition-colors hover:text-[#ff6b00]">Back to ports ↑</a>
+        <div className="flex items-center gap-5">
+          <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-[#a3a3a3] transition-colors hover:text-[#ff6b00]">
+            <GitHubLogo className="size-3.5" />
+            GitHub
+          </a>
+          <a href="#ports" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#a3a3a3] transition-colors hover:text-[#ff6b00]">Back to ports ↑</a>
+        </div>
       </footer>
     </main>
   );
