@@ -16,3 +16,4 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Do not introduce gradients, glow, textures, or large colored panels into theme surfaces. Color should communicate state, not decorate idle UI.
 - Keep the Neovim port’s Tree-sitter/LSP, diagnostics, GitSigns, Telescope, and `nvim-cmp` highlight groups semantically aligned when expanding syntax or plugin coverage.
 - Keep the Shadcn port compatible with standard Shadcn variables. Its `--success`, `--warning`, `--danger`, and `--info` tokens are intentional extensions for application status UI.
+- Keep the Expo port as a static, branded dark React Native `StyleSheet` JavaScript module. Preserve its `colors` and `semanticColors` exports so consuming apps can use palette roles without copying raw values.

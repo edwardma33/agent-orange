@@ -42,6 +42,7 @@ Avoid calling it neon, cyberpunk, retro, cozy, or aggressively orange. Do not us
 - `themes/warp/agent_orange.yml` is the canonical Warp theme and ANSI palette.
 - `themes/nvim/agent_orange.lua` is the Neovim colorscheme implementation.
 - `themes/shadcn/agent_orange.css` provides standard Shadcn tokens plus Agent Orange semantic status tokens.
+- `themes/expo/agent-orange.js` provides reusable React Native colors, status colors, and baseline `StyleSheet` rules.
 - `themes/agent_orange.tokens.json` is the shared palette contract; run `npm run themes:check` after changing it.
 
 When adding a new platform theme or website description, update this document only if the shared visual language or naming rules change.

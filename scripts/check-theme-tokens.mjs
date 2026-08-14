@@ -15,6 +15,14 @@ const checks = [
     file: "themes/shadcn/agent_orange.css",
     values: ["focus", "danger", "success", "warning", "info"],
   },
+  {
+    file: "themes/expo/agent-orange.js",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+  },
+  {
+    file: "registry.json",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+  },
 ];
 
 let hasFailure = false;

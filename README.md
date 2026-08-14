@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agent Orange
 
-## Getting Started
+A near-black developer theme with orange focus and quiet semantic color. Agent Orange keeps the interface out of the way during long sessions while preserving clear signals for changes, warnings, and errors.
 
-First, run the development server:
+This repository contains the theme ports and the website that presents them. It is designed to be installed directly from GitHub.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Install
+
+### Neovim
+
+Agent Orange works with Neovim's built-in package manager. Add this to `init.lua`:
+
+```lua
+vim.pack.add({
+  "https://github.com/edwardma33/agent-orange",
+})
+
+vim.cmd.colorscheme("agent_orange")
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For a reproducible release, pin a semver tag:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```lua
+vim.pack.add({
+  {
+    src = "https://github.com/edwardma33/agent-orange",
+    version = "v0.1.0",
+  },
+})
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The root `colors/agent_orange.lua` file is the package-manager entrypoint; the canonical colorscheme source remains at `themes/nvim/agent_orange.lua`.
 
-## Learn More
+### ShadCN
 
-To learn more about Next.js, take a look at the following resources:
+The public repository is also a ShadCN GitHub registry. In an initialized ShadCN project, install the theme with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx shadcn@latest add edwardma33/agent-orange/agent-orange
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add `#v0.1.0` after the item name to install a tagged version. The registry applies the Agent Orange CSS variables in both light and dark blocks because the theme is intentionally dark-only. The standalone CSS source is available at `themes/shadcn/agent_orange.css`.
 
-## Deploy on Vercel
+### Warp
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Clone the repository into Warp's custom themes directory:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+mkdir -p ~/.warp/themes
+git clone https://github.com/edwardma33/agent-orange.git ~/.warp/themes/agent-orange
+```
+
+Restart Warp or open the theme picker, then choose **Agent Orange**. Warp discovers custom YAML themes in subdirectories; this repository's theme is at `themes/warp/agent_orange.yml`.
+
+### Expo / React Native
+
+Copy `themes/expo/agent-orange.js` into your app’s theme directory, then import its shared colors or ready-to-use styles:
+
+```tsx
+import { colors, semanticColors, styles } from "./theme/agent-orange";
+
+// Example: <View style={styles.surface} />
+//          <Text style={{ color: semanticColors.success.foreground }} />
+```
+
+## Develop
+
+```bash
+npm install
+npm run dev
+```
+
+Run the distribution checks before publishing:
+
+```bash
+npm run themes:check
+npm run themes:nvim:check
+npm run registry:check
+npm run lint
+```
+
+The production website can be verified with `npm run build`. It uses `next/font/google`, so the build requires access to Google Fonts unless those fonts are self-hosted.
+
+## Releases
+
+Use semver Git tags (for example, `v0.1.0`) when publishing stable theme versions. Both Neovim's `vim.pack` and ShadCN GitHub registry installs can target those tags. Before making a release, run the checks above, then commit and push the tag.
+
+## Theme sources
+
+- `themes/agent_orange.tokens.json` — shared palette contract
+- `themes/warp/agent_orange.yml` — Warp terminal theme
+- `themes/nvim/agent_orange.lua` — Neovim colorscheme implementation
+- `themes/shadcn/agent_orange.css` — standalone ShadCN tokens
+- `themes/expo/agent-orange.js` — Expo and React Native StyleSheet
+
+Licensed under the [MIT License](LICENSE).

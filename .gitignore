@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+.nvimlog
 
 # debug
 npm-debug.log*

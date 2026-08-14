@@ -6,6 +6,7 @@ import {
   CodeXml,
   Command,
   PanelsTopLeft,
+  Smartphone,
   Terminal,
 } from "lucide-react";
 
@@ -37,6 +38,15 @@ const ports = [
     href: "/api/themes/shadcn",
     Icon: PanelsTopLeft,
   },
+  {
+    name: "Expo",
+    kind: "Native",
+    description: "A React Native StyleSheet with intentional dark surfaces and semantic status colors.",
+    path: "agent-orange.js",
+    format: "React Native StyleSheet",
+    href: "/api/themes/expo",
+    Icon: Smartphone,
+  },
 ];
 
 export default function Home() {
@@ -54,7 +64,7 @@ export default function Home() {
             Ports
           </a>
           <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#e8e8e8]">
-            03 ports
+            04 ports
           </span>
         </div>
       </nav>
@@ -63,7 +73,7 @@ export default function Home() {
         <div className="max-w-2xl">
           <p className="mb-7 flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#a3a3a3]">
             <span className="size-1.5 rounded-full bg-[#ff6b00]" />
-            Developer themes / 03 ports
+            Developer themes / 04 ports
           </p>
           <h1 className="font-heading text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-[#f5f5f5] sm:text-6xl lg:text-7xl">
             Color for the moments that need a signal.
@@ -146,7 +156,7 @@ export default function Home() {
             <p className="max-w-sm text-sm leading-6 text-[#a3a3a3]">Each port follows the same quiet foundation, then uses the platform’s native conventions.</p>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {ports.map(({ name, kind, description, path, format, href, Icon }) => (
               <article key={name} className="group rounded-lg border border-[#333333] bg-[#111111] p-5 transition-colors hover:border-[#5a5a5a] sm:p-6">
                 <div className="flex items-start justify-between">

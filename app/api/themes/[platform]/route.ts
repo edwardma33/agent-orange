@@ -20,6 +20,11 @@ const themes = {
     filename: "agent_orange.css",
     contentType: "text/css; charset=utf-8",
   },
+  expo: {
+    file: "themes/expo/agent-orange.js",
+    filename: "agent-orange.js",
+    contentType: "text/javascript; charset=utf-8",
+  },
 } as const;
 
 export async function GET(_request: Request, context: RouteContext<"/api/themes/[platform]">) {
