@@ -1,69 +1,181 @@
-import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowDownRight,
+  ArrowUpRight,
+  Check,
+  CodeXml,
+  Command,
+  PanelsTopLeft,
+  Terminal,
+} from "lucide-react";
+
+const ports = [
+  {
+    name: "Warp",
+    kind: "Terminal",
+    description: "A complete terminal palette with restrained ANSI color and an orange cursor.",
+    path: "agent_orange.yml",
+    format: "YAML theme",
+    href: "/api/themes/warp",
+    Icon: Terminal,
+  },
+  {
+    name: "Neovim",
+    kind: "Editor",
+    description: "A practical colorscheme for focused editing, diagnostics, diffs, and code.",
+    path: "agent_orange.lua",
+    format: "Lua colorscheme",
+    href: "/api/themes/nvim",
+    Icon: CodeXml,
+  },
+  {
+    name: "Shadcn/UI",
+    kind: "Interface",
+    description: "Semantic tokens for composed interfaces with dark surfaces and orange focus.",
+    path: "agent_orange.css",
+    format: "CSS variables",
+    href: "/api/themes/shadcn",
+    Icon: PanelsTopLeft,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen overflow-hidden bg-[#111111] text-[#e8e8e8] selection:bg-[#ff6b00] selection:text-[#111111]">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+        <Link href="/" className="group flex items-center gap-2.5" aria-label="Agent Orange home">
+          <span className="grid size-7 place-items-center rounded-[7px] bg-[#ff6b00] text-[11px] font-black text-[#111111] transition-transform group-hover:-rotate-6">
+            AO
+          </span>
+          <span className="font-heading text-sm font-bold tracking-[-0.02em]">Agent Orange</span>
+        </Link>
+        <div className="flex items-center gap-5 text-xs font-medium text-[#a3a3a3]">
+          <a href="#ports" className="hidden transition-colors hover:text-[#e8e8e8] sm:block">
+            Ports
+          </a>
+          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#e8e8e8]">
+            03 ports
+          </span>
+        </div>
+      </nav>
+
+      <section className="mx-auto grid max-w-7xl items-center gap-14 px-6 pb-24 pt-16 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-32 lg:pt-24">
+        <div className="max-w-2xl">
+          <p className="mb-7 flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#a3a3a3]">
+            <span className="size-1.5 rounded-full bg-[#ff6b00]" />
+            Developer themes / 03 ports
           </p>
+          <h1 className="font-heading text-5xl font-semibold leading-[0.98] tracking-[-0.055em] text-[#f5f5f5] sm:text-6xl lg:text-7xl">
+            Color for the moments that need a signal.
+          </h1>
+          <p className="mt-7 max-w-xl text-base leading-7 text-[#a3a3a3] sm:text-lg">
+            A near-black developer theme with orange focus and quiet semantic color. Built to keep the interface out of the way through long sessions.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a
+              href="#ports"
+              className="inline-flex h-11 items-center gap-2 rounded-md bg-[#ff6b00] px-4 text-sm font-semibold text-[#111111] transition-colors hover:bg-[#ff7d25]"
+            >
+              Explore ports
+              <ArrowDownRight className="size-4" aria-hidden="true" />
+            </a>
+            <span className="inline-flex h-11 items-center rounded-md border border-[#333333] px-3.5 font-mono text-xs text-[#a3a3a3]">
+              monochrome / semantic
+            </span>
+          </div>
+          <dl className="mt-14 grid max-w-lg grid-cols-3 border-y border-[#2a2a2a] py-5">
+            <div>
+              <dt className="font-mono text-[10px] uppercase tracking-widest text-[#737373]">Base</dt>
+              <dd className="mt-1.5 font-mono text-sm text-[#e8e8e8]">#111111</dd>
+            </div>
+            <div className="border-l border-[#2a2a2a] pl-5">
+              <dt className="font-mono text-[10px] uppercase tracking-widest text-[#737373]">Focus</dt>
+              <dd className="mt-1.5 font-mono text-sm text-[#ff6b00]">#ff6b00</dd>
+            </div>
+            <div className="border-l border-[#2a2a2a] pl-5">
+              <dt className="font-mono text-[10px] uppercase tracking-widest text-[#737373]">State</dt>
+              <dd className="mt-1.5 font-mono text-sm text-[#e8e8e8]">Calm</dd>
+            </div>
+          </dl>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+          <div className="absolute -left-3 top-8 h-[calc(100%-64px)] w-3 border-y border-l border-[#2a2a2a]" />
+          <div className="overflow-hidden rounded-lg border border-[#333333] bg-[#161616] shadow-2xl shadow-black/30">
+            <div className="flex h-11 items-center justify-between border-b border-[#2a2a2a] px-4">
+              <div className="flex gap-1.5" aria-hidden="true">
+                <span className="size-2 rounded-full bg-[#4a4a4a]" />
+                <span className="size-2 rounded-full bg-[#4a4a4a]" />
+                <span className="size-2 rounded-full bg-[#4a4a4a]" />
+              </div>
+              <span className="font-mono text-[10px] text-[#737373]">agent_orange</span>
+              <Command className="size-3.5 text-[#737373]" aria-hidden="true" />
+            </div>
+            <div className="space-y-5 p-5 font-mono text-[12px] leading-6 sm:p-7 sm:text-[13px]">
+              <p className="text-[#737373]">{"// signal, not spectacle"}</p>
+              <p>
+                <span className="text-[#ff6b00]">const</span>{" "}
+                <span className="text-[#e8e8e8]">theme</span>{" "}
+                <span className="text-[#a3a3a3]">=</span>{" "}
+                <span className="text-[#c5a1e8]">createTheme</span><span className="text-[#a3a3a3]">(</span><span className="text-[#e7b34a]">&#123;</span>
+              </p>
+              <div className="space-y-1 border-l border-[#333333] pl-4">
+                <p><span className="text-[#c5a1e8]">background</span><span className="text-[#a3a3a3]">:</span> <span className="text-[#44c995]">&quot;#111111&quot;</span><span className="text-[#a3a3a3]">,</span></p>
+                <p><span className="text-[#c5a1e8]">focus</span><span className="text-[#a3a3a3]">:</span> <span className="text-[#44c995]">&quot;#ff6b00&quot;</span><span className="text-[#a3a3a3]">,</span></p>
+                <p><span className="text-[#c5a1e8]">warnings</span><span className="text-[#a3a3a3]">:</span> <span className="text-[#e7b34a]">&quot;clear&quot;</span><span className="text-[#a3a3a3]">,</span></p>
+                <p><span className="text-[#c5a1e8]">errors</span><span className="text-[#a3a3a3]">:</span> <span className="text-[#d46a78]">&quot;present&quot;</span><span className="text-[#a3a3a3]">,</span></p>
+              </div>
+              <p><span className="text-[#e7b34a]">&#125;</span><span className="text-[#a3a3a3]">)</span></p>
+              <div className="flex items-center gap-2 pt-1 text-[#44c995]">
+                <Check className="size-3.5" aria-hidden="true" />
+                <span>ready for the long run</span>
+              </div>
+            </div>
+          </div>
+          <p className="mt-3 text-right font-mono text-[10px] uppercase tracking-[0.15em] text-[#737373]">orange reserved for intent</p>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="ports" className="border-t border-[#2a2a2a] bg-[#151515] scroll-mt-6">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div>
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-[#ff6b00]">Available now</p>
+              <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.04em] text-[#f5f5f5] sm:text-4xl">Choose your surface.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-[#a3a3a3]">Each port follows the same quiet foundation, then uses the platform’s native conventions.</p>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {ports.map(({ name, kind, description, path, format, href, Icon }) => (
+              <article key={name} className="group rounded-lg border border-[#333333] bg-[#111111] p-5 transition-colors hover:border-[#5a5a5a] sm:p-6">
+                <div className="flex items-start justify-between">
+                  <div className="grid size-11 place-items-center rounded-md border border-[#3a3a3a] bg-[#1a1a1a] text-[#e8e8e8] group-hover:border-[#ff6b00] group-hover:text-[#ff6b00]">
+                    <Icon className="size-5" strokeWidth={1.7} aria-hidden="true" />
+                  </div>
+                  <span className="rounded-full border border-[#333333] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-[#a3a3a3]">{kind}</span>
+                </div>
+                <h3 className="mt-8 font-heading text-2xl font-semibold tracking-[-0.035em] text-[#f5f5f5]">{name}</h3>
+                <p className="mt-2 max-w-md text-sm leading-6 text-[#a3a3a3]">{description}</p>
+                <div className="mt-7 flex items-center justify-between border-t border-[#2a2a2a] pt-4">
+                  <div>
+                    <p className="font-mono text-xs text-[#e8e8e8]">{path}</p>
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-[#737373]">{format}</p>
+                  </div>
+                  <a href={href} className="inline-flex size-9 items-center justify-center rounded-md border border-[#3a3a3a] text-[#e8e8e8] transition-colors hover:border-[#ff6b00] hover:bg-[#ff6b00] hover:text-[#111111]" aria-label={`Download ${name} theme`}>
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <footer className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
+        <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#737373]">Agent Orange / developer themes</p>
+        <a href="#ports" className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#a3a3a3] transition-colors hover:text-[#ff6b00]">Back to ports ↑</a>
+      </footer>
+    </main>
   );
 }
