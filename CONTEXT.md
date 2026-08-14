@@ -14,7 +14,7 @@ The intended feeling is focused, technical, calm, and slightly industrial. It sh
 - Semantic colors: mint green is success/addition, muted rose is error/removal, amber is warning/search/constant emphasis, and cool blue/cyan/purple provide code differentiation.
 - Contrast: hierarchy comes first from value (black, gray, soft white); color is a secondary semantic signal. Large areas should remain neutral.
 
-The Warp theme is the canonical palette source. When adding another platform, keep the base, foreground, orange accent, and semantic roles aligned with `themes/warp/agent_orange.yml` unless the platform has a strong technical limitation.
+`themes/agent_orange.tokens.json` is the canonical palette contract. When adding another platform, keep the base, foreground, orange accent, and semantic roles aligned with it; `themes/warp/agent_orange.yml` remains the ANSI reference implementation.
 
 ## Theme behavior
 
@@ -40,6 +40,8 @@ Avoid calling it neon, cyberpunk, retro, cozy, or aggressively orange. Do not us
 ## Current artifacts
 
 - `themes/warp/agent_orange.yml` is the canonical Warp theme and ANSI palette.
-- `themes/nvim/colors/agent_orange.lua` is the Neovim colorscheme implementation.
+- `themes/nvim/agent_orange.lua` is the Neovim colorscheme implementation.
+- `themes/shadcn/agent_orange.css` provides standard Shadcn tokens plus Agent Orange semantic status tokens.
+- `themes/agent_orange.tokens.json` is the shared palette contract; run `npm run themes:check` after changing it.
 
 When adding a new platform theme or website description, update this document only if the shared visual language or naming rules change.

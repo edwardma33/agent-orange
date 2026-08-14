@@ -6,13 +6,20 @@
  */
 
 .dark {
+  /* Shared Agent Orange palette anchors. */
+  --agent-orange-focus: #ff6b00;
+  --agent-orange-danger: #d46a78;
+  --agent-orange-success: #44c995;
+  --agent-orange-warning: #e7b34a;
+  --agent-orange-info: #779ecb;
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.923 0 0);
   --card: oklch(0.18 0 0);
   --card-foreground: oklch(0.923 0 0);
   --popover: oklch(0.18 0 0);
   --popover-foreground: oklch(0.923 0 0);
-  --primary: oklch(0.646 0.222 41.116);
+  --primary: var(--agent-orange-focus);
   --primary-foreground: oklch(0.98 0.016 73.684);
   --secondary: oklch(0.222 0 0);
   --secondary-foreground: oklch(0.923 0 0);
@@ -20,21 +27,39 @@
   --muted-foreground: oklch(0.62 0 0);
   --accent: oklch(0.24 0 0);
   --accent-foreground: oklch(0.923 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --destructive: var(--agent-orange-danger);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.646 0.222 41.116);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --ring: var(--agent-orange-focus);
+  --chart-1: var(--agent-orange-focus);
   --chart-2: oklch(0.77 0.143 160.3);
   --chart-3: oklch(0.78 0.13 80.2);
   --chart-4: oklch(0.75 0.127 259.8);
   --chart-5: oklch(0.73 0.145 310.2);
   --sidebar: oklch(0.18 0 0);
   --sidebar-foreground: oklch(0.923 0 0);
-  --sidebar-primary: oklch(0.646 0.222 41.116);
+  --sidebar-primary: var(--agent-orange-focus);
   --sidebar-primary-foreground: oklch(0.98 0.016 73.684);
   --sidebar-accent: oklch(0.24 0 0);
   --sidebar-accent-foreground: oklch(0.923 0 0);
   --sidebar-border: oklch(1 0 0 / 12%);
-  --sidebar-ring: oklch(0.646 0.222 41.116);
+  --sidebar-ring: var(--agent-orange-focus);
+
+  /* Non-standard semantic roles for alerts, badges, and application status. */
+  --success: var(--agent-orange-success);
+  --success-foreground: #10251e;
+  --success-muted: #10251e;
+  --success-muted-foreground: #5de0ad;
+  --warning: var(--agent-orange-warning);
+  --warning-foreground: #2b2413;
+  --warning-muted: #2b2413;
+  --warning-muted-foreground: #f2c45c;
+  --danger: var(--agent-orange-danger);
+  --danger-foreground: #2a151a;
+  --danger-muted: #2a151a;
+  --danger-muted-foreground: #ec8390;
+  --info: var(--agent-orange-info);
+  --info-foreground: #142132;
+  --info-muted: #142132;
+  --info-muted-foreground: #91b7e3;
 }

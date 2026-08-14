@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agentorange.dev/theme-tokens/v1",
+  "name": "Agent Orange",
+  "description": "Platform-neutral color roles for the Agent Orange theme family.",
+  "color": {
+    "base": "#111111",
+    "surface": "#161616",
+    "selection": "#242424",
+    "line": "#1a1a1a",
+    "muted": "#737373",
+    "dim": "#4a4a4a",
+    "foreground": "#e8e8e8",
+    "bright": "#f5f5f5",
+    "focus": "#ff6b00",
+    "danger": "#d46a78",
+    "dangerBright": "#ec8390",
+    "success": "#44c995",
+    "successBright": "#5de0ad",
+    "warning": "#e7b34a",
+    "warningBright": "#f2c45c",
+    "info": "#779ecb",
+    "infoBright": "#91b7e3",
+    "member": "#c5a1e8",
+    "type": "#80d1ca"
+  },
+  "role": {
+    "focus": "focus",
+    "success": "success",
+    "warning": "warning",
+    "danger": "danger",
+    "info": "info",
+    "member": "member",
+    "type": "type"
+  }
+}
