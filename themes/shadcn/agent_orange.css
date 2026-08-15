@@ -2,8 +2,71 @@
  * Agent Orange for shadcn/ui
  *
  * Add this after the standard shadcn token mapping in your globals.css.
- * Apply the `dark` class to your document root to activate the palette.
+ * `:root` is the light palette; apply `.dark` to your document root for dark.
  */
+
+:root {
+  /* Light: warm paper, dark ink, and orange only where intent needs a signal. */
+  --agent-orange-focus: #ff6b00;
+  --agent-orange-focus-text: #a94200;
+  --agent-orange-danger: #b94d60;
+  --agent-orange-success: #197a55;
+  --agent-orange-warning: #9a6500;
+  --agent-orange-info: #3b6399;
+  --agent-orange-member: #7953a3;
+  --agent-orange-type: #197b75;
+  --dim: #a59e96;
+
+  --background: #f8f7f5;
+  --foreground: #25221f;
+  --card: #ffffff;
+  --card-foreground: #25221f;
+  --popover: #ffffff;
+  --popover-foreground: #25221f;
+  --primary: var(--agent-orange-focus-text);
+  --primary-foreground: #ffffff;
+  --secondary: #f1efeb;
+  --secondary-foreground: #25221f;
+  --muted: #f1efeb;
+  --muted-foreground: #716b64;
+  --accent: #f1e8df;
+  --accent-foreground: #25221f;
+  --destructive: var(--agent-orange-danger);
+  --destructive-foreground: #ffffff;
+  --border: #e6e1db;
+  --input: #e6e1db;
+  --ring: var(--agent-orange-focus);
+  --chart-1: var(--agent-orange-focus-text);
+  --chart-2: var(--agent-orange-success);
+  --chart-3: var(--agent-orange-warning);
+  --chart-4: var(--agent-orange-member);
+  --chart-5: var(--agent-orange-type);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #25221f;
+  --sidebar-primary: var(--agent-orange-focus-text);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1e8df;
+  --sidebar-accent-foreground: #25221f;
+  --sidebar-border: #e6e1db;
+  --sidebar-ring: var(--agent-orange-focus);
+
+  --success: var(--agent-orange-success);
+  --success-foreground: #ffffff;
+  --success-muted: #e1f1e9;
+  --success-muted-foreground: #126442;
+  --warning: var(--agent-orange-warning);
+  --warning-foreground: #ffffff;
+  --warning-muted: #f9eed8;
+  --warning-muted-foreground: #7a5100;
+  --danger: var(--agent-orange-danger);
+  --danger-foreground: #ffffff;
+  --danger-muted: #f8e5e8;
+  --danger-muted-foreground: #9f374a;
+  --info: var(--agent-orange-info);
+  --info-foreground: #ffffff;
+  --info-muted: #e6eef8;
+  --info-muted-foreground: #2c4f80;
+}
 
 .dark {
   /* Shared Agent Orange palette anchors. */
@@ -12,6 +75,9 @@
   --agent-orange-success: #44c995;
   --agent-orange-warning: #e7b34a;
   --agent-orange-info: #779ecb;
+  --agent-orange-member: #c5a1e8;
+  --agent-orange-type: #80d1ca;
+  --dim: #4a4a4a;
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.923 0 0);

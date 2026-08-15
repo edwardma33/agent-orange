@@ -39,7 +39,7 @@ The public repository is also a ShadCN GitHub registry. In an initialized ShadCN
 npx shadcn@latest add edwardma33/agent-orange/agent-orange
 ```
 
-Add `#v0.1.0` after the item name to install a tagged version. The registry applies the Agent Orange CSS variables in both light and dark blocks because the theme is intentionally dark-only. The standalone CSS source is available at `themes/shadcn/agent_orange.css`.
+Add `#v0.1.0` after the item name to install a tagged version. The registry applies the Agent Orange CSS variables in both light and dark blocks. The standalone CSS source is available at `themes/shadcn/agent_orange.css`.
 
 ### Warp
 

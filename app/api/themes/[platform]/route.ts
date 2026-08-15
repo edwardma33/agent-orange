@@ -35,11 +35,26 @@ export async function GET(_request: Request, context: RouteContext<"/api/themes/
     return new NextResponse("Theme not found", { status: 404 });
   }
 
-  const contents = await readFile(join(process.cwd(), theme.file));
+  const mode = new URL(_request.url).searchParams.get("mode");
+  const isShadcnMode = platform === "shadcn" && (mode === "light" || mode === "dark");
+  const filename = isShadcnMode ? `agent_orange.${mode}.css` : theme.filename;
+  const source = await readFile(join(process.cwd(), theme.file), "utf8");
+  let contents = source;
+
+  if (isShadcnMode) {
+    const blockPattern = mode === "light" ? /:root\s*\{([\s\S]*?)\n\}/ : /\.dark\s*\{([\s\S]*?)\n\}/;
+    const match = source.match(blockPattern);
+
+    if (!match) {
+      return new NextResponse("Theme mode not found", { status: 500 });
+    }
+
+    contents = `/* Agent Orange for shadcn/ui — ${mode} */\n:root {${match[1]}\n}\n`;
+  }
 
   return new NextResponse(contents, {
     headers: {
-      "Content-Disposition": `attachment; filename=${theme.filename}`,
+      "Content-Disposition": `attachment; filename=${filename}`,
       "Content-Type": theme.contentType,
       "Cache-Control": "public, max-age=3600",
     },

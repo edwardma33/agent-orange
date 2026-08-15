@@ -23,6 +23,28 @@
     "member": "#c5a1e8",
     "type": "#80d1ca"
   },
+  "light": {
+    "base": "#f8f7f5",
+    "surface": "#ffffff",
+    "selection": "#f1e8df",
+    "line": "#e6e1db",
+    "muted": "#716b64",
+    "dim": "#a59e96",
+    "foreground": "#25221f",
+    "bright": "#111111",
+    "focus": "#ff6b00",
+    "focusText": "#a94200",
+    "danger": "#b94d60",
+    "dangerBright": "#9f374a",
+    "success": "#197a55",
+    "successBright": "#126442",
+    "warning": "#9a6500",
+    "warningBright": "#7a5100",
+    "info": "#3b6399",
+    "infoBright": "#2c4f80",
+    "member": "#7953a3",
+    "type": "#197b75"
+  },
   "role": {
     "focus": "focus",
     "success": "success",
