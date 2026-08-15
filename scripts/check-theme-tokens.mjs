@@ -31,6 +31,11 @@ const checks = [
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
   },
   {
+    file: "themes/expo/agent-orange-light.js",
+    values: ["base", "foreground", "focus", "focusText", "danger", "success", "warning", "info", "member", "type"],
+    palette: "light",
+  },
+  {
     file: "registry.json",
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
   },

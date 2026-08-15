@@ -26,6 +26,8 @@ const themes = {
   expo: {
     file: "themes/expo/agent-orange.js",
     filename: "agent-orange.js",
+    lightFile: "themes/expo/agent-orange-light.js",
+    lightFilename: "agent-orange-light.js",
     contentType: "text/javascript; charset=utf-8",
   },
 } as const;

@@ -64,7 +64,7 @@ Restart Warp or open the theme picker, then choose **Agent Orange** or **Agent O
 
 ### Expo / React Native
 
-Copy `themes/expo/agent-orange.js` into your app’s theme directory, then import its shared colors or ready-to-use styles:
+Copy `themes/expo/agent-orange.js` (dark) or `themes/expo/agent-orange-light.js` (light) into your app’s theme directory, then import its shared colors or ready-to-use styles:
 
 ```tsx
 import { colors, semanticColors, styles } from "./theme/agent-orange";
@@ -103,5 +103,6 @@ Use semver Git tags (for example, `v0.1.0`) when publishing stable theme version
 - `themes/nvim/agent_orange.lua` — Neovim colorscheme implementation
 - `themes/shadcn/agent_orange.css` — standalone ShadCN tokens
 - `themes/expo/agent-orange.js` — Expo and React Native StyleSheet
+- `themes/expo/agent-orange-light.js` — Expo and React Native light StyleSheet
 
 Licensed under the [MIT License](LICENSE).
