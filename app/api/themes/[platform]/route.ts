@@ -8,6 +8,8 @@ const themes = {
   warp: {
     file: "themes/warp/agent_orange.yml",
     filename: "agent_orange.yml",
+    lightFile: "themes/warp/agent_orange_light.yml",
+    lightFilename: "agent_orange_light.yml",
     contentType: "application/x-yaml; charset=utf-8",
   },
   nvim: {
@@ -36,9 +38,10 @@ export async function GET(_request: Request, context: RouteContext<"/api/themes/
   }
 
   const mode = new URL(_request.url).searchParams.get("mode");
+  const isLightMode = mode === "light" && "lightFile" in theme;
   const isShadcnMode = platform === "shadcn" && (mode === "light" || mode === "dark");
-  const filename = isShadcnMode ? `agent_orange.${mode}.css` : theme.filename;
-  const source = await readFile(join(process.cwd(), theme.file), "utf8");
+  const filename = isShadcnMode ? `agent_orange.${mode}.css` : isLightMode ? theme.lightFilename : theme.filename;
+  const source = await readFile(join(process.cwd(), isLightMode ? theme.lightFile : theme.file), "utf8");
   let contents = source;
 
   if (isShadcnMode) {

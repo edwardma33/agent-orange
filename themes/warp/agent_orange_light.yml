@@ -1,0 +1,25 @@
+name: Agent Orange Light
+accent: '#ff6b00'
+cursor: '#ff6b00'
+background: '#f8f7f5'
+foreground: '#25221f'
+details: lighter
+terminal_colors:
+  normal:
+    black: '#e6e1db'
+    red: '#b94d60'
+    green: '#197a55'
+    yellow: '#9a6500'
+    blue: '#3b6399'
+    magenta: '#7953a3'
+    cyan: '#197b75'
+    white: '#25221f'
+  bright:
+    black: '#a59e96'
+    red: '#9f374a'
+    green: '#126442'
+    yellow: '#7a5100'
+    blue: '#2c4f80'
+    magenta: '#7953a3'
+    cyan: '#197b75'
+    white: '#111111'

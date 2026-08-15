@@ -50,7 +50,7 @@ mkdir -p ~/.warp/themes
 git clone https://github.com/edwardma33/agent-orange.git ~/.warp/themes/agent-orange
 ```
 
-Restart Warp or open the theme picker, then choose **Agent Orange**. Warp discovers custom YAML themes in subdirectories; this repository's theme is at `themes/warp/agent_orange.yml`.
+Restart Warp or open the theme picker, then choose **Agent Orange** or **Agent Orange Light**. Warp discovers custom YAML themes in subdirectories; the theme files are at `themes/warp/agent_orange.yml` and `themes/warp/agent_orange_light.yml`.
 
 ### Expo / React Native
 
@@ -89,6 +89,7 @@ Use semver Git tags (for example, `v0.1.0`) when publishing stable theme version
 
 - `themes/agent_orange.tokens.json` — shared palette contract
 - `themes/warp/agent_orange.yml` — Warp terminal theme
+- `themes/warp/agent_orange_light.yml` — Warp light terminal theme
 - `themes/nvim/agent_orange.lua` — Neovim colorscheme implementation
 - `themes/shadcn/agent_orange.css` — standalone ShadCN tokens
 - `themes/expo/agent-orange.js` — Expo and React Native StyleSheet

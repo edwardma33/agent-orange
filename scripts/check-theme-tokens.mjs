@@ -5,6 +5,11 @@ const lightValues = ["base", "foreground", "focus", "focusText", "danger", "succ
 
 const checks = [
   {
+    file: "themes/warp/agent_orange_light.yml",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+    palette: "light",
+  },
+  {
     file: "themes/warp/agent_orange.yml",
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
   },
@@ -28,9 +33,9 @@ const checks = [
 
 let hasFailure = false;
 
-for (const { file, values } of checks) {
+for (const { file, values, palette = "color" } of checks) {
   const contents = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
-  const missing = values.filter((name) => !contents.includes(tokens.color[name]));
+  const missing = values.filter((name) => !contents.includes(tokens[palette][name]));
 
   if (missing.length > 0) {
     hasFailure = true;
