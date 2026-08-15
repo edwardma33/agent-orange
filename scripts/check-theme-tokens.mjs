@@ -18,6 +18,11 @@ const checks = [
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
   },
   {
+    file: "themes/nvim/agent_orange.lua",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+    palette: "light",
+  },
+  {
     file: "themes/shadcn/agent_orange.css",
     values: ["focus", "danger", "success", "warning", "info", "member", "type"],
   },

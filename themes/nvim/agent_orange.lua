@@ -4,11 +4,14 @@ if vim.fn.exists("syntax_on") == 1 then
   vim.cmd("syntax reset")
 end
 
-vim.o.background = "dark"
-vim.o.termguicolors = true
-vim.g.colors_name = "agent_orange"
+local variant = vim.g.agent_orange_variant or "dark"
+vim.g.agent_orange_variant = nil
 
-local c = {
+vim.o.background = variant == "light" and "light" or "dark"
+vim.o.termguicolors = true
+vim.g.colors_name = variant == "light" and "agent_orange_light" or "agent_orange"
+
+local dark = {
   bg = "#111111",
   surface = "#161616",
   selection = "#242424",
@@ -27,7 +30,46 @@ local c = {
   blue = "#91b7e3",
   purple = "#c5a1e8",
   cyan = "#80d1ca",
+  blue_normal = "#779ecb",
+  magenta_normal = "#b08ad5",
+  cyan_normal = "#66b7b0",
+  danger_bg = "#2a151a",
+  warning_bg = "#2b2413",
+  info_bg = "#142132",
+  success_bg = "#10251e",
+  hint_bg = "#102522",
 }
+
+local light = {
+  bg = "#f8f7f5",
+  surface = "#ffffff",
+  selection = "#f1e8df",
+  line = "#e6e1db",
+  muted = "#716b64",
+  dim = "#a59e96",
+  fg = "#25221f",
+  bright = "#111111",
+  orange = "#ff6b00",
+  red = "#b94d60",
+  red_bright = "#9f374a",
+  green = "#197a55",
+  green_bright = "#126442",
+  amber = "#9a6500",
+  amber_bright = "#7a5100",
+  blue = "#3b6399",
+  purple = "#7953a3",
+  cyan = "#197b75",
+  blue_normal = "#3b6399",
+  magenta_normal = "#7953a3",
+  cyan_normal = "#197b75",
+  danger_bg = "#f8e5e8",
+  warning_bg = "#f9eed8",
+  info_bg = "#e6eef8",
+  success_bg = "#e1f1e9",
+  hint_bg = "#e3f1f0",
+}
+
+local c = variant == "light" and light or dark
 
 local function hi(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
@@ -171,10 +213,10 @@ hi("DiagnosticWarn", { fg = c.amber })
 hi("DiagnosticInfo", { fg = c.blue })
 hi("DiagnosticHint", { fg = c.cyan })
 hi("DiagnosticOk", { fg = c.green })
-hi("DiagnosticVirtualTextError", { fg = c.red, bg = "#2a151a" })
-hi("DiagnosticVirtualTextWarn", { fg = c.amber, bg = "#2b2413" })
-hi("DiagnosticVirtualTextInfo", { fg = c.blue, bg = "#142132" })
-hi("DiagnosticVirtualTextHint", { fg = c.cyan, bg = "#102522" })
+hi("DiagnosticVirtualTextError", { fg = c.red, bg = c.danger_bg })
+hi("DiagnosticVirtualTextWarn", { fg = c.amber, bg = c.warning_bg })
+hi("DiagnosticVirtualTextInfo", { fg = c.blue, bg = c.info_bg })
+hi("DiagnosticVirtualTextHint", { fg = c.cyan, bg = c.hint_bg })
 hi("DiagnosticFloatingError", { fg = c.red })
 hi("DiagnosticFloatingWarn", { fg = c.amber })
 hi("DiagnosticFloatingInfo", { fg = c.blue })
@@ -185,9 +227,9 @@ hi("DiagnosticUnderlineWarn", { undercurl = true, sp = c.amber })
 hi("DiagnosticUnderlineInfo", { undercurl = true, sp = c.blue })
 hi("DiagnosticUnderlineHint", { undercurl = true, sp = c.cyan })
 
-hi("DiffAdd", { fg = c.green, bg = "#10251e" })
-hi("DiffChange", { fg = c.amber, bg = "#2b2413" })
-hi("DiffDelete", { fg = c.red, bg = "#2a151a" })
+hi("DiffAdd", { fg = c.green, bg = c.success_bg })
+hi("DiffChange", { fg = c.amber, bg = c.warning_bg })
+hi("DiffDelete", { fg = c.red, bg = c.danger_bg })
 hi("DiffText", { fg = c.bright, bg = c.selection, bold = true })
 hi("Added", { fg = c.green })
 hi("Changed", { fg = c.amber })
@@ -196,9 +238,9 @@ hi("Removed", { fg = c.red })
 hi("GitSignsAdd", { fg = c.green })
 hi("GitSignsChange", { fg = c.amber })
 hi("GitSignsDelete", { fg = c.red })
-hi("GitSignsAddLn", { bg = "#10251e" })
-hi("GitSignsChangeLn", { bg = "#2b2413" })
-hi("GitSignsDeleteLn", { bg = "#2a151a" })
+hi("GitSignsAddLn", { bg = c.success_bg })
+hi("GitSignsChangeLn", { bg = c.warning_bg })
+hi("GitSignsDeleteLn", { bg = c.danger_bg })
 
 -- Common plugin integrations are safe to define even when a plugin is not installed.
 hi("TelescopeNormal", { fg = c.fg, bg = c.surface })
@@ -230,9 +272,9 @@ vim.g.terminal_color_0 = c.line
 vim.g.terminal_color_1 = c.red
 vim.g.terminal_color_2 = c.green
 vim.g.terminal_color_3 = c.amber
-vim.g.terminal_color_4 = "#779ecb"
-vim.g.terminal_color_5 = "#b08ad5"
-vim.g.terminal_color_6 = "#66b7b0"
+vim.g.terminal_color_4 = c.blue_normal
+vim.g.terminal_color_5 = c.magenta_normal
+vim.g.terminal_color_6 = c.cyan_normal
 vim.g.terminal_color_7 = c.fg
 vim.g.terminal_color_8 = c.dim
 vim.g.terminal_color_9 = c.red_bright

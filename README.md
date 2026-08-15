@@ -29,7 +29,17 @@ vim.pack.add({
 })
 ```
 
-The root `colors/agent_orange.lua` file is the package-manager entrypoint; the canonical colorscheme source remains at `themes/nvim/agent_orange.lua`.
+Use `vim.cmd.colorscheme("agent_orange_light")` for the light variant. The root `colors/agent_orange.lua` and `colors/agent_orange_light.lua` files are package-manager entrypoints; the canonical colorscheme source remains at `themes/nvim/agent_orange.lua`.
+
+To follow macOS appearance when you reload your config, choose the colorscheme after reading `AppleInterfaceStyle`:
+
+```lua
+local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+local appearance = handle and handle:read("*a") or ""
+if handle then handle:close() end
+
+vim.cmd.colorscheme(appearance:match("Dark") and "agent_orange" or "agent_orange_light")
+```
 
 ### ShadCN
 

@@ -15,6 +15,7 @@ const themes = {
   nvim: {
     file: "themes/nvim/agent_orange.lua",
     filename: "agent_orange.lua",
+    lightFilename: "agent_orange_light.lua",
     contentType: "text/x-lua; charset=utf-8",
   },
   shadcn: {
@@ -38,11 +39,15 @@ export async function GET(_request: Request, context: RouteContext<"/api/themes/
   }
 
   const mode = new URL(_request.url).searchParams.get("mode");
-  const isLightMode = mode === "light" && "lightFile" in theme;
+  const isLightMode = mode === "light" && ("lightFile" in theme || platform === "nvim");
   const isShadcnMode = platform === "shadcn" && (mode === "light" || mode === "dark");
-  const filename = isShadcnMode ? `agent_orange.${mode}.css` : isLightMode ? theme.lightFilename : theme.filename;
-  const source = await readFile(join(process.cwd(), isLightMode ? theme.lightFile : theme.file), "utf8");
+  const filename = isShadcnMode ? `agent_orange.${mode}.css` : isLightMode && "lightFilename" in theme ? theme.lightFilename : theme.filename;
+  const source = await readFile(join(process.cwd(), isLightMode && "lightFile" in theme ? theme.lightFile : theme.file), "utf8");
   let contents = source;
+
+  if (platform === "nvim" && mode === "light") {
+    contents = `vim.g.agent_orange_variant = "light"\n${source}`;
+  }
 
   if (isShadcnMode) {
     const blockPattern = mode === "light" ? /:root\s*\{([\s\S]*?)\n\}/ : /\.dark\s*\{([\s\S]*?)\n\}/;
