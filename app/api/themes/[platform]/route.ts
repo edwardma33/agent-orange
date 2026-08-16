@@ -30,11 +30,6 @@ const themes = {
     lightFilename: "agent-orange-light.js",
     contentType: "text/javascript; charset=utf-8",
   },
-  skill: {
-    file: ".agents/skills/agent-orange/SKILL.md",
-    filename: "SKILL.md",
-    contentType: "text/markdown; charset=utf-8",
-  },
 } as const;
 
 export async function GET(_request: Request, context: RouteContext<"/api/themes/[platform]">) {

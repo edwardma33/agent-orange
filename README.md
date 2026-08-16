@@ -6,6 +6,16 @@ This repository contains the theme ports and the website that presents them. It 
 
 ## Install
 
+### Agent skills
+
+Install the Agent Orange skill with the interactive Skills CLI:
+
+```bash
+npx skills add edwardma33/agent-orange
+```
+
+The CLI lets you choose the target agent, project or global scope, and whether to symlink or copy the skill.
+
 ### Neovim
 
 Agent Orange works with Neovim's built-in package manager. Add this to `init.lua`:
