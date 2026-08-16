@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Orange"
+  short_description: "Build Agent Orange UI and theme ports"
+  default_prompt: "Use $agent-orange to prototype this page in the Agent Orange visual system."
