@@ -30,6 +30,13 @@ const themes = {
     lightFilename: "agent-orange-light.js",
     contentType: "text/javascript; charset=utf-8",
   },
+  chatgpt: {
+    file: "themes/chatgpt/agent_orange_dark.txt",
+    filename: "agent_orange_dark.txt",
+    lightFile: "themes/chatgpt/agent_orange_light.txt",
+    lightFilename: "agent_orange_light.txt",
+    contentType: "text/plain; charset=utf-8",
+  },
 } as const;
 
 export async function GET(_request: Request, context: RouteContext<"/api/themes/[platform]">) {

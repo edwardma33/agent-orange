@@ -36,6 +36,15 @@ const checks = [
     palette: "light",
   },
   {
+    file: "themes/chatgpt/agent_orange_dark.txt",
+    values: ["base", "foreground", "focus", "danger", "success", "member"],
+  },
+  {
+    file: "themes/chatgpt/agent_orange_light.txt",
+    values: ["base", "foreground", "focus", "danger", "success", "member"],
+    palette: "light",
+  },
+  {
     file: "registry.json",
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
   },

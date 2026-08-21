@@ -18,3 +18,9 @@ Run `npm run themes:check` after changing a shared value. It verifies that the W
 ## Light palette
 
 The light mode is warm-neutral rather than stark white: `#f8f7f5` workspace, `#ffffff` raised surfaces, and dark ink. `#ff6b00` remains the focus ring and brand signal. Small primary text and controls use `#a94200` so they remain legible on light surfaces.
+
+## ChatGPT Desktop
+
+The ChatGPT Desktop port covers Chat, Work, and Codex. Download the matching `agent_orange_*.txt` file, copy its complete single line, then open **Settings → Appearance** in ChatGPT Desktop and paste it into the Import control for the matching Light or Dark theme row.
+
+The port uses Inter for the UI and JetBrains Mono for code. Install those local font families to reproduce its intended typography; otherwise ChatGPT Desktop uses its normal font fallback. The desktop app owns the `codex-theme-v1:` import format, so update this port if a future app release changes its importer.
