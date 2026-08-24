@@ -74,6 +74,7 @@ export async function GET(_request: Request, context: RouteContext<"/api/themes/
       "Content-Disposition": `attachment; filename=${filename}`,
       "Content-Type": theme.contentType,
       "Cache-Control": "public, max-age=3600",
+      "X-Robots-Tag": "noindex",
     },
   });
 }
