@@ -39,6 +39,7 @@ Avoid calling it neon, cyberpunk, retro, cozy, or aggressively orange. Do not us
 
 ## Current artifacts
 
+- `themes/alacritty/agent_orange.toml` and `themes/alacritty/agent_orange_light.toml` are the Alacritty TOML terminal themes.
 - `themes/warp/agent_orange.yml` is the canonical Warp theme and ANSI palette.
 - `themes/nvim/agent_orange.lua` is the Neovim colorscheme implementation.
 - `themes/shadcn/agent_orange.css` provides standard Shadcn tokens plus Agent Orange semantic status tokens.

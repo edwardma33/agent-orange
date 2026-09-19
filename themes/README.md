@@ -13,7 +13,7 @@
 | Member | `#c5a1e8` | Properties, fields, member access |
 | Type | `#80d1ca` | Types, interfaces, type-like constructs |
 
-Run `npm run themes:check` after changing a shared value. It verifies that the Warp, Neovim, ShadCN, Expo, and GitHub-installable ShadCN registry forms still contain their required shared values.
+Run `npm run themes:check` after changing a shared value. It verifies that the Alacritty, Warp, Neovim, ShadCN, Expo, and GitHub-installable ShadCN registry forms still contain their required shared values.
 
 ## Light palette
 

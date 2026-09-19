@@ -27,8 +27,8 @@ const homepageJsonLd = {
       url: absoluteUrl("/"),
       codeRepository: siteConfig.githubUrl,
       license: `${siteConfig.githubUrl}/blob/main/LICENSE`,
-      programmingLanguage: ["Lua", "CSS", "JavaScript", "YAML"],
-      runtimePlatform: ["Neovim", "Warp", "Shadcn/UI", "Expo", "ChatGPT Desktop"],
+      programmingLanguage: ["Lua", "CSS", "JavaScript", "TOML", "YAML"],
+      runtimePlatform: ["Alacritty", "Neovim", "Warp", "Shadcn/UI", "Expo", "ChatGPT Desktop"],
       isAccessibleForFree: true,
     },
   ],
@@ -50,7 +50,7 @@ export default function Home() {
             Agent Orange is a developer theme built for signal.
           </h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
-            Near-black developer themes for Neovim, Warp, Shadcn/UI, Expo, and ChatGPT Desktop. Orange marks focus while quiet semantic color keeps changes, warnings, and errors easy to read.
+            Near-black developer themes for Alacritty, Neovim, Warp, Shadcn/UI, Expo, and ChatGPT Desktop. Orange marks focus while quiet semantic color keeps changes, warnings, and errors easy to read.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a href="#ports" className="inline-flex h-11 items-center gap-2 rounded-md bg-primary px-4 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90">

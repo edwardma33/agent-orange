@@ -72,6 +72,24 @@ git clone https://github.com/edwardma33/agent-orange.git ~/.warp/themes/agent-or
 
 Restart Warp or open the theme picker, then choose **Agent Orange** or **Agent Orange Light**. Warp discovers custom YAML themes in subdirectories; the theme files are at `themes/warp/agent_orange.yml` and `themes/warp/agent_orange_light.yml`.
 
+### Alacritty
+
+Copy a theme into a directory beside your `alacritty.toml` configuration:
+
+```bash
+mkdir -p ~/.config/alacritty/themes
+cp /path/to/agent-orange/themes/alacritty/agent_orange.toml ~/.config/alacritty/themes/
+```
+
+Then import it with a relative path:
+
+```toml
+[general]
+import = ["themes/agent_orange.toml"]
+```
+
+Replace the filename with `agent_orange_light.toml` to use the light variant.
+
 ### Expo / React Native
 
 Copy `themes/expo/agent-orange.js` (dark) or `themes/expo/agent-orange-light.js` (light) into your app’s theme directory, then import its shared colors or ready-to-use styles:
@@ -108,6 +126,8 @@ Use semver Git tags (for example, `v0.1.0`) when publishing stable theme version
 ## Theme sources
 
 - `themes/agent_orange.tokens.json` — shared palette contract
+- `themes/alacritty/agent_orange.toml` — Alacritty terminal theme
+- `themes/alacritty/agent_orange_light.toml` — Alacritty light terminal theme
 - `themes/warp/agent_orange.yml` — Warp terminal theme
 - `themes/warp/agent_orange_light.yml` — Warp light terminal theme
 - `themes/nvim/agent_orange.lua` — Neovim colorscheme implementation

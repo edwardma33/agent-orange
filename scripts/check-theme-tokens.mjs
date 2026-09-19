@@ -5,6 +5,15 @@ const lightValues = ["base", "foreground", "focus", "focusText", "danger", "succ
 
 const checks = [
   {
+    file: "themes/alacritty/agent_orange_light.toml",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+    palette: "light",
+  },
+  {
+    file: "themes/alacritty/agent_orange.toml",
+    values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
+  },
+  {
     file: "themes/warp/agent_orange_light.yml",
     values: ["base", "foreground", "focus", "danger", "success", "warning", "info", "member", "type"],
     palette: "light",

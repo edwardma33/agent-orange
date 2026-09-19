@@ -5,6 +5,13 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 const themes = {
+  alacritty: {
+    file: "themes/alacritty/agent_orange.toml",
+    filename: "agent_orange.toml",
+    lightFile: "themes/alacritty/agent_orange_light.toml",
+    lightFilename: "agent_orange_light.toml",
+    contentType: "application/toml; charset=utf-8",
+  },
   warp: {
     file: "themes/warp/agent_orange.yml",
     filename: "agent_orange.yml",

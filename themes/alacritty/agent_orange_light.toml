@@ -1,0 +1,35 @@
+# Agent Orange for Alacritty — light
+
+[colors.primary]
+background = '#f8f7f5'
+foreground = '#25221f'
+dim_foreground = '#716b64'
+bright_foreground = '#111111'
+
+[colors.cursor]
+text = '#f8f7f5'
+cursor = '#ff6b00'
+
+[colors.selection]
+text = '#25221f'
+background = '#f1e8df'
+
+[colors.normal]
+black = '#e6e1db'
+red = '#b94d60'
+green = '#197a55'
+yellow = '#9a6500'
+blue = '#3b6399'
+magenta = '#7953a3'
+cyan = '#197b75'
+white = '#25221f'
+
+[colors.bright]
+black = '#a59e96'
+red = '#9f374a'
+green = '#126442'
+yellow = '#7a5100'
+blue = '#2c4f80'
+magenta = '#7953a3'
+cyan = '#197b75'
+white = '#111111'

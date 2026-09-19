@@ -30,6 +30,47 @@ const githubUrl = siteConfig.githubUrl;
 
 export const themePorts: Port[] = [
   {
+    slug: "alacritty",
+    name: "Alacritty",
+    kind: "Terminal",
+    description:
+      "A native Alacritty TOML palette with restrained ANSI color and an orange cursor.",
+    introduction:
+      "Agent Orange for Alacritty keeps the terminal near-black at rest and reserves its brighter palette for commands, status, and ANSI output. The orange cursor makes the active point unmistakable without coloring the whole surface.",
+    filePath: "agent_orange.toml",
+    format: "TOML theme",
+    pagePath: "/themes/alacritty",
+    downloadPath: "/api/themes/alacritty",
+    sourceHref: `${githubUrl}/blob/main/themes/alacritty/agent_orange.toml`,
+    logo: "https://cdn.simpleicons.org/alacritty/e8e8e8",
+    modes: true,
+    seoTitle: "Alacritty Terminal Theme — Near-Black and Orange",
+    seoDescription:
+      "Install Agent Orange for Alacritty, a near-black TOML terminal theme with an orange cursor, restrained ANSI colors, and matching light and dark variants.",
+    features: [
+      "Complete normal and bright ANSI palette",
+      "Orange cursor and focus accent",
+      "Neutral opaque terminal surfaces",
+      "Matching light and dark TOML themes",
+    ],
+    installSteps: [
+      {
+        title: "Copy a theme file",
+        description:
+          "Copy the dark or light TOML file into the themes directory beside your Alacritty configuration.",
+        code: `mkdir -p ~/.config/alacritty/themes
+cp /path/to/agent-orange/themes/alacritty/agent_orange.toml ~/.config/alacritty/themes/`,
+      },
+      {
+        title: "Import it from Alacritty",
+        description:
+          "Add the relative import to alacritty.toml. Replace the filename with agent_orange_light.toml for the light variant.",
+        code: `[general]
+import = ["themes/agent_orange.toml"]`,
+      },
+    ],
+  },
+  {
     slug: "neovim",
     name: "Neovim",
     kind: "Editor",
